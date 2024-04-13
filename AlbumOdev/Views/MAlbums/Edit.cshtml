@@ -1,0 +1,59 @@
+﻿@model AlbumOdev.Models.MAlbum
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MAlbum</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AlbumID" />
+            <div class="form-group">
+                <label asp-for="AlbumNo" class="control-label"></label>
+                <input asp-for="AlbumNo" class="form-control" />
+                <span asp-validation-for="AlbumNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumTur" class="control-label"></label>
+                <input asp-for="AlbumTur" class="form-control" />
+                <span asp-validation-for="AlbumTur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SanatciBilgi" class="control-label"></label>
+                <input asp-for="SanatciBilgi" class="form-control" />
+                <span asp-validation-for="SanatciBilgi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumAdi" class="control-label"></label>
+                <input asp-for="AlbumAdi" class="form-control" />
+                <span asp-validation-for="AlbumAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumFiyat" class="control-label"></label>
+                <input asp-for="AlbumFiyat" class="form-control" />
+                <span asp-validation-for="AlbumFiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Yerli" /> @Html.DisplayNameFor(model => model.Yerli)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

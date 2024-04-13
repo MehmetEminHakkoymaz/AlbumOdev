@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AlbumOdev.Models.MAlbum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumTur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SanatciBilgi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumFiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yerli)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumTur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SanatciBilgi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumFiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yerli)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AlbumID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AlbumID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AlbumID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
