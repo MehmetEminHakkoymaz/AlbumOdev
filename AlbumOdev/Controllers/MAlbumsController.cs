@@ -54,7 +54,7 @@ namespace AlbumOdev.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlbumID,AlbumNo,AlbumTur,SanatciBilgi,AlbumAdi,AlbumFiyat,Yerli")] MAlbum mAlbum)
+        public async Task<IActionResult> Create([Bind("AlbumID,AlbumNo,AlbumTur,SanatciBilgi,AlbumAdi,AlbumFiyat,Yerli")] MAlbum mAlbum, string managerInfo)
         {
             if (ModelState.IsValid)
             {

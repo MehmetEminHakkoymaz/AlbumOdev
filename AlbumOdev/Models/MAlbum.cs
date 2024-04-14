@@ -12,5 +12,6 @@ namespace AlbumOdev.Models
         public string AlbumAdi { get; set; }
         public Decimal AlbumFiyat { get; set; } 
         public bool Yerli { get; set; }
+        //public string Yapimci {  get; set; } 
     }
 }
